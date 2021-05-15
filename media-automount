@@ -81,7 +81,7 @@ then
 fi
 
 # directory name
-AUTOMOUNT_DIR="${mediadir}/${LABEL:-${dev##*/}}.$TYPE"
+AUTOMOUNT_DIR="${mediadir}/${LABEL:-${dev##*/}}"
 
 # Load Filesystem-specific configuration for mounting
 if [ -e "%confdir/$TYPE" ]
