@@ -1,7 +1,7 @@
 # -*- sh -*-
 
 # Options to use for auto-mounting generic filesystems
-AUTOMOUNT_OPTS=relatime,user,sync
+AUTOMOUNT_OPTS=noatime,user
 
 # Type to use for auto-mounting generic filesystems
 AUTOMOUNT_TYPE=auto
