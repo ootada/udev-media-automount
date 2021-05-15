@@ -58,7 +58,8 @@ then
 fi
 
 # Load additional info for the block device
-eval $(blkid -po export $dev)
+info=$(blkid -po export $dev)
+eval ${info// /_}
 
 # Devices with unknown type will be ignored
 if [ -z "$TYPE" ]
