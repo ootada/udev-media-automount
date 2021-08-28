@@ -6,4 +6,5 @@ install:
 	install -Dm644 media-automount@.service $(DESTDIR)$(PREFIX)/lib/systemd/system/media-automount@.service
 	install -d $(DESTDIR)/etc/media-automount.d
 	install -Cm644 media-automount.d/* $(DESTDIR)/etc/media-automount.d/
+	systemctl daemon-reload
 
