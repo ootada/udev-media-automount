@@ -1,4 +1,4 @@
-#!/bin/sh
+#!/bin/bash
 #$1 = <dev>
 
 # Default options to use for mounting
@@ -58,7 +58,8 @@ then
 fi
 
 # Load additional info for the block device
-eval $(blkid -po export $dev)
+info=$(blkid -po export $dev)
+eval ${info// /_}
 
 # Devices with unknown type will be ignored
 if [ -z "$TYPE" ]
@@ -80,7 +81,7 @@ then
 fi
 
 # directory name
-AUTOMOUNT_DIR="${mediadir}/${LABEL:-${dev##*/}}.$TYPE"
+AUTOMOUNT_DIR="${mediadir}/${LABEL:-${dev##*/}}"
 
 # Load Filesystem-specific configuration for mounting
 if [ -e "%confdir/$TYPE" ]
